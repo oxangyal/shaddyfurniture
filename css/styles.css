@@ -259,7 +259,7 @@ a{
 }
 
 .open .show-more {
-    background: url("/idea/images/line.svg") no-repeat;
+    background: url("/images/idea/line.svg") no-repeat;
     width: 16px;
     height: 1px;
     border: none;
