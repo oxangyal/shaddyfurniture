@@ -10,15 +10,13 @@
     max-width: 1760px;
     margin: 0 auto;
 }
+
 .bgn-image {
-    background-image: url('/images/header/main_shaddy_pic.jpg');
-    background-size: contain;
+    background-image: url('../images/header/main_shaddy_pic.jpg');
+    background-size: cover;
     background-repeat: no-repeat;
-    width: 100%;
-    aspect-ratio: 1912 / 1000;
-    /* height: 0;
-    padding-top: 52.3%; (img-height / img-width * container-width) */
-                /* (1000 / 1912 * 100) */
+    padding-top: 200px;
+    max-width: 100%;
 }
 
 .header_spacer {
@@ -98,7 +96,6 @@
 }
 
 .interior-search{
-    display: block;
     margin: 60px auto 0 auto;
     width: 360px;
     height: 60px;
@@ -131,16 +128,14 @@ padding-bottom: 80px;
     padding-left: 80px;
 } */
 .search_input {
-    position: relative;
+    margin: 0 auto;
+    display: flex;
+    border-radius: 30px;
+    height: 60px;
+    width: 360px;
+    background-color:rgba(255, 255, 255, 0.5)
 }
-
-.search_input svg {
-    position: absolute;
-    top: 69%;
-    transform: translateY(-78%);
-    right: 710px;
-}
-
+/* 
 .search_button {
     position: absolute;
     top: 0;
@@ -151,11 +146,16 @@ padding-bottom: 80px;
     background-color: transparent;
     color: #A09386;
     cursor: pointer;
-}
+} */
 
 .interior-search {
     color: white;
     padding-left: 20px;
+    padding-right: 10px;
+    width: 275px;
+    font-family: "Poppins", serif;
+    font-size: 14px;
+    background-color: transparent;
 }
 
 /* Main */
@@ -268,14 +268,14 @@ a{
 }
 
 .open .show-more {
-    background: url("./images/idea/line.svg") no-repeat;
+    background: url("../images/idea/line.svg") no-repeat;
     width: 16px;
     height: 1px;
     border: none;
 }
 
 .idea_img {
-    background: url("./images/idea/idea_img.jpg") no-repeat;
+    background: url("../images/idea/idea_img.jpg") no-repeat;
     width: 870px;
     height: 600px;
     border-radius: 60px 60px 0px 60px;
@@ -360,7 +360,7 @@ label {
 .acor-container label:before {
     position: absolute;
     content: "";
-    background: url("/images/idea/line.svg") no-repeat;
+    background: url("../images/idea/line.svg") no-repeat;
     width: 16px;
     height: 1px;
     top: 0;
@@ -426,8 +426,6 @@ label {
 
 
 .review {
-    height: 800px;
-    margin-top: 200px;
     background: linear-gradient(279.85deg, #FFFFFF  0%, #FAF5F2 100%);
 }
 
@@ -707,7 +705,7 @@ padding: 50px;
     background: url('./images/header/mobil_logo.svg');
 } */
     .bgn-image {
-        background: url('./images/header/mobil_shaddymain.jpg');
+        background: url('../images/header/mobil_shaddymain.jpg');
         max-width: 100%;
         height: 406px;
         /* background-size: contain;
@@ -911,7 +909,7 @@ padding: 50px;
 }
 
 .idea_img {
-    background: url("./images/idea/mobil_ideaimg.png") no-repeat;
+    background: url("../images/idea/mobil_ideaimg.png") no-repeat;
     max-width: 100%;
     max-height: 100%;
     border-radius: 35px 35px 0px 45px;
