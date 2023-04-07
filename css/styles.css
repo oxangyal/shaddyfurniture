@@ -41,6 +41,10 @@
     gap: 60px;
 }
 
+.nav_bar_mobil{
+    display: none;
+}
+
 .nav-element {
     display: flex;
     /* width: 500px;
@@ -69,6 +73,10 @@
     color: rgb(250, 251, 252);
 }
 
+
+.hamburger_menu{
+    display: none;
+}
 .interior-slogan{
     margin-top: 161px;
     font-family: 'Poppins', serif;
@@ -248,25 +256,26 @@ a{
     width: 806px;
 }
 
-.idea__context {
+.idea__container {
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
-    width: 870px;
+    /* row-gap: 20px; */
+    order: 2;
 }
+
 .idea__context-header {
     margin-bottom: 32px;
 }
 
 .open .show-more {
-    background: url("/images/idea/line.svg") no-repeat;
+    background: url("./images/idea/line.svg") no-repeat;
     width: 16px;
     height: 1px;
     border: none;
 }
 
 .idea_img {
-    background: url("/images/idea/idea_img.jpg") no-repeat;
+    background: url("./images/idea/idea_img.jpg") no-repeat;
     width: 870px;
     height: 600px;
     border-radius: 60px 60px 0px 60px;
@@ -545,11 +554,10 @@ label {
 }
 
 .contact__list-input{
-font-size: 18px;
-border-color: #F79489
-;
-border-radius: 30px;
-margin-top: 48px;
+    font-size: 18px;
+    border-color: #F79489;
+    border-radius: 30px;
+    margin-top: 48px;
 }
 
 .email_input {
@@ -569,7 +577,7 @@ margin-top: 48px;
     font-size: 16px;
     color: rgb(182, 144, 144);
     background-color: #FEFCFB;
-    background-image: url('./images/contact/email_search.svg');
+    /* background-image: url('./images/contact/email_search.svg'); */
     background-repeat: no-repeat;
     background-position: calc(100% - 30px) center; /* Position the icon on the right side */
 }
@@ -693,25 +701,67 @@ padding: 50px;
     padding-right: 80px;
 }
 
-@media all and (max-width: 375px) {
-    .nav{
-        display: none;
-    }
-    .interior-slogan{
-        font-size: 18px;
-    }
+@media  screen and (max-width: 375px) {
+
+    /* header .logo{
+    background: url('./images/header/mobil_logo.svg');
+} */
     .bgn-image {
-        background-image: url('/images/header/mobil_shaddymain.jp');
-        /* max-width: 50%; */
-        background-size: contain;
+        background: url('./images/header/mobil_shaddymain.jpg');
+        max-width: 100%;
+        height: 406px;
+        /* background-size: contain;
         background-repeat: no-repeat;
-        background-position: center;
-        max-width: 80%;
-        /* height: auto; */
+        background-position: center; */
 }
 
-.menu__title{
+.container {
+    padding-top: 20px;
+    margin-left: 15px;
+}
+
+.header_spacer{
     display: none;
+}
+
+.logo svg{
+    width: 86px;
+}
+
+.nav_bar_mobil{
+    display: inline;
+    padding-right: 20px;
+}
+
+.basket{
+    padding-left: 110px;
+}
+
+.nav,
+.menu__title {
+        display: none;
+    }
+
+.interior-slogan{
+        font-size: 18px;
+        font-weight: 500;
+        margin-top: 75px;
+        text-align: center;
+    }
+
+.interior-search{
+        width: 280px;
+        height: 38px;
+        margin-top: 30px;
+}
+
+.interior-text{
+        font-size: 12px;
+        margin-top: 45px;
+}
+
+.menu__items-logo svg{
+    width: 28px;
 }
 
 .menu__items{
@@ -720,45 +770,159 @@ padding: 50px;
     flex-wrap: wrap;
     min-width: 330px;
     padding-left: 0;
-
 }
+
+
 .menu__items-title{
     font-size: 12px;
     font-weight: semi-bold;
 }
 
-.menu__items-container{
+.menu__items-container, 
+.footer__menu-link{
     font-size: 12px;
     font-weight: 200;
+}
+
+
+
+ /* Hamburger menu */
+
+ .hamburger_menu {
+    display: flex;
+
+}
+#menu__toggle {
+    opacity: 0;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+}
+#menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    right: 0;
+}
+
+.menu__btn {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 45px;
+    right: 45px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+
+    background-color: #f7f8fb;
+
+    transition-duration: .25s;
+}
+.menu__btn > span::before {
+    content: '';
+    top: -8px;
+}
+.menu__btn > span::after {
+    content: '';
+    top: 8px;
+}
+
+.menu__box {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    right: -100%;
+    width: 160px;
+    height: 60%;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #747271;
+    box-shadow: 1px 0px 6px rgba(0.5, 0.5, 0, .2);
+    border-radius: 5% 0% 0% 5%;
+    transition-duration: .25s;
+}
+
+.menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #f0f0f7;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight:500;
+    text-decoration: none;
+    transition-duration: .25s;
+}
+.menu__item:hover {
+    background-color: #b9b5af;
+    border-radius: 7%;
 }
 .about_container{
     display: flex;
     align-items: start;
-    padding-left: 0;
+    padding: 0;
+}
+
+.idea{
+    padding-top: 60px;
 }
 
 .idea_img {
-    /* display: none; */
-    background: url("/images/idea/mobil_ideaimg.png") no repeat;
-    /* width: 870px;
-    height: 600px;
-    /* border-radius: 60px 60px 0px 60px; */ 
-    /* border-radius: 0; */
-
+    width: 90%;
+    height: 232px; 
 }
 
-.idea__context-header-title{
+.idea__context-header-title,
+.center .title, 
+.contact_text_title{
     font-size: 18px;
     font-weight: 500;   
 }
 
-.idea__context-text{
+.idea__context-text,
+.text_describtion,
+.reviewrs_job,
+.contact_text{
     font-size: 12px;
     font-weight: 400;   
 }
 
 .idea{
-padding-left: 10px;
+    padding-left: 10px;
+}
+
+.idea_img {
+    background: url("./images/idea/mobil_ideaimg.png") no-repeat;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 35px 35px 0px 45px;
+}
+
+.acor-container p, 
+.acor-container label,
+.idea-category-link,
+.footer__copy-text, .product_category, .product_price{
+    font-size: 12px;
+    font-weight: 200;
 }
 
 .product_container-title{
@@ -767,34 +931,94 @@ padding-left: 10px;
     padding-top: 20px;
 }
 
-.product_container svg{
-    display: none;
-    /* background: url("/images/product/mobil_brownchair.png") no repeat; */
-
+.product_img{
+    width: 163px;
+    height: 154px;
 }
 
 .product_container{
-    padding-top: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.product_rating svg{
+    width: 76px;
+}
+
+.review_container{
+    display: flex;
+    flex-direction: column;
+}
+
+.review__item .title, 
+.text_describtion{
+    padding-left: 20px;
+}
+
+.review-userpic img{
+    width: 40px;
+    height: 40px;
+}
+
+.contact_container{
+    display: flex;
+    flex-direction: column;
+    order: 2;
+}
+
+.contact_text,
+.contact_text_title{
+    padding-left: 20px;
+}
+
+.img_contact{
+    width: 335px;
+    height: 232px;
+    margin-top: 100px;
+}
+
+.menu__contact_image{
+    margin-top: 200px;
+    padding-left: 20px;
+}
+
+.email_input  input{
+        width: 280px;
+        height: 38px;
 }
 
 .footer{
     font-size: 18px;
     padding-top: 0;
+    height: 1200px;
+}
+
+.big_logo svg{
+    width: 118px;
+    height: 35px;
+    padding-bottom: 40px;
 }
 
 .footer__menu {
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
-   /* justify-content: space-around; */
-
 }
 
 .footer__menu-title {
-    font-size: 18px;
-}
-
-.footer__menu-link{
     font-size: 14px;
 }
+
+.review__item .title, .reviewers_name,
+.product_title {
+    font-size: 14px;
+}
+
+.review-user-box{
+    padding-left: 20px;
+}
+.footer__menu-list{
+    padding-top: 40px;
+}
+
 }
