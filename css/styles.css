@@ -257,6 +257,7 @@ a{
 
 .idea__container {
     display: flex;
+    gap: 30px;
     /* flex: 1 1 0; */
     /* flex-direction: column; */
     /* row-gap: 20px; */
