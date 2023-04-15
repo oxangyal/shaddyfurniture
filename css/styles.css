@@ -116,7 +116,8 @@ padding-bottom: 80px;
     padding-left: 80px;
 } */
 
-.search_input {
+.search_input,
+.email_input {
     margin: 0 auto;
     display: flex;
     border-radius: 30px;
@@ -136,7 +137,7 @@ padding-bottom: 80px;
     cursor: pointer;  
 } 
 
-.interior-search {
+.interior-search{
     color: white;
     height: 100%;
     /* padding-left: 20px;
@@ -255,9 +256,9 @@ a{
 }
 
 .idea__container {
-    flex: 1 1 0;
     display: flex;
-    flex-direction: column;
+    /* flex: 1 1 0; */
+    /* flex-direction: column; */
     /* row-gap: 20px; */
     /* order: ; */
 }
@@ -266,7 +267,7 @@ a{
     margin-bottom: 32px;
 }
 
-.open .show-more {
+.show-more {
     background: url("../images/idea/line.svg") no-repeat;
     width: 16px;
     height: 1px;
@@ -274,9 +275,11 @@ a{
 }
 
 .idea_img {
-    flex: 1 1 0;
-    background: url("../images/idea/idea_img.jpg") no-repeat;
-    background-size: contain;
+    /* flex: 1 1 0; */
+    /* background: url("../images/idea/idea_img.jpg") no-repeat; */
+    /* background-size: contain; */
+    max-height: 100%;
+    max-width: 100%;
     border-radius: 60px 60px 0px 60px;
 }
 
@@ -446,12 +449,13 @@ label {
     padding-top: 50px;
 }
 
-    .review_container {
-        /* margin-top: 110px; */
-        display: flex;
-        justify-content: space-between;
-        /* margin: 110px 80px 0 80px; */
-        padding-bottom: 248px;
+.review_container {
+     /* margin-top: 110px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* margin: 110px 80px 0 80px; */
+    padding-bottom: 248px;
 
     }
 
@@ -497,13 +501,11 @@ label {
         line-height: 28px;
         color: #564E4E;
         padding-left: 10px;
-
     }
 
     .reviewers_name{
         font-weight: 500;
         font-size: 18px;
-
     }
 
     .text_describtion{
@@ -515,6 +517,63 @@ label {
         color: #564E4E;
         height: 210px;
     }
+
+    /* Slick slider */
+
+    /* .slick-arrow{
+        display: none
+    } */
+
+    .slick-dots{
+        margin: 30px auto;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .slick-dots button{
+        display: inline-block;
+        margin: 0 5px;
+        text-indent:  -9999px;
+        height: 10px;
+        width: 10px;
+        background-color: rgba(250, 220, 217, 1);
+        border: none;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+
+    .slick-dots{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .slick-dots li{
+        display: inline-block;
+    }
+
+    .slick-active button{
+        background: rgba(247, 148, 137, 1);
+    }
+
+    /* .slick-active{} */
+        
+    /* } */
+
+
+    /* #slick-slide-control00{
+        background: url('../images/header/dot_1.svg');
+        border-radius: 80%;
+    display: flex;
+    flex-direction: column;
+    }
+
+    #slick-slide-control01{
+        background: url('../images/header/dot_2.svg');
+        border-radius: 80%;
+    } */
 
 /* Contact section  */
 
@@ -536,6 +595,7 @@ label {
     /* margin-bottom: 50px; */
     gap: 80px;
     margin-top: 100px;
+    margin-bottom: 200px;
     /* margin-bottom: 200px; */ 
 }
 
@@ -576,14 +636,14 @@ label {
     border: 2px solid #FADCD9;
     border-radius: 30px;
     font-size: 16px;
-    color: rgb(182, 144, 144);
+    color: rgb(138, 98, 98);
     background-color: #FEFCFB;
     /* background-image: url('./images/contact/email_search.svg'); */
     background-repeat: no-repeat;
     background-position: calc(100% - 30px) center; /* Position the icon on the right side */
 }
 
-.contact_button {
+/* .contact_button {
     position: absolute;
     top: 50%;
     left: 350px;
@@ -594,9 +654,12 @@ label {
     border-radius: 50%;
     cursor: pointer;
     outline: none;
-}
+} */
 .email-input_text::placeholder{
     color: #F79489;
+    padding-left: 15px;
+    font-family: 'Poppins', serif;
+    font-size: 14px; 
 }
 
 /* .search_button svg {
@@ -606,7 +669,25 @@ label {
     margin: auto;
   } */
 
+.email-input_text {
+    color: #F79489;
+    height: 100%;
+    /* padding-left: 20px;
+      padding-right: 10px; */
+    width: 100%;
+    font-family: "Poppins", serif;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+    padding: 0 60px 0 23px;
+    background-image: url('../images/contact/email_search.svg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) 50%;
+}
 
+.email-input_text:focus{
+    outline: none;
+}
 
  /* Footer section */
 
@@ -957,6 +1038,8 @@ padding: 50px;
 .review_container{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    
 }
 
 .review__item .title, 
@@ -973,6 +1056,7 @@ padding: 50px;
     display: flex;
     flex-direction: column;
     order: 1;
+    margin-bottom: 30px;
 }
 
 .contact_text,
@@ -992,9 +1076,12 @@ padding: 50px;
 }
 
 .email_input  input{
-        width: 280px;
-        height: 38px;
+    max-width: 90%;
+    max-height: 100%;
+    margin-top: 30px;
 }
+
+
 
 .footer{
     font-size: 18px;
