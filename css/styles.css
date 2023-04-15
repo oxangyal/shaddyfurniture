@@ -13,7 +13,7 @@
     background-image: url('../images/header/main_shaddy_pic.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    padding-bottom: 200px;
+    padding-bottom: 400px;
     max-width: 100%;
 }
 
@@ -80,6 +80,17 @@
     color: #fff;
 
 }
+
+.slogan-part-two {
+    display: block;
+    margin-top: 0.5em; 
+}
+
+.slogan-break::after {
+    content: "\A";
+    white-space: pre;
+}
+
 
 .interior-text{
     margin-top: 40px;
@@ -191,7 +202,6 @@ padding-bottom: 80px;
 
 .menu__items-logo {
     padding-top: 16px;
-    padding-left: 20px;
 }
 
 .menu__items-title {
