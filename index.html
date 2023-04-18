@@ -8,8 +8,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">   
+<!-- <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"> -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+<link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">   
 <link rel="stylesheet" href="./css/styles.css">
 
 
@@ -18,9 +19,31 @@
 </head>
 
 <body>
-    <div class="bgn-image">
+
+    <!-- <div class="bgn-image"> -->
+
+        <!-- Swiper -->
+        <section id="slider-1">
+            <div class="swiper" id="swiper-1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/header/main_shaddy_pic.jpg" alt="Magnolia">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/header/bgn-image-2.jpg" alt="Boat">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/header/bgn-image-3.jpg" alt="Blue room">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            
+        </section> 
+
+
         <div class="container">
-            <div class="header_spacer"></div>
+            <!-- <div class="header_spacer"></div> -->
         <!-- Navigation and slogan -->
             <header class="header">
         
@@ -125,7 +148,6 @@
             </div>
         </div>
     </div>
-
 
     <main class="main">
 
@@ -554,7 +576,7 @@
 </main>
 
 <footer class="footer">
-    <div class="container">
+    <div class="container_footer">
         <nav class="footer__menu">
             <div class="big_logo">
                 <svg width="238" height="70" viewBox="0 0 238 70" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -642,16 +664,18 @@
             </div>
         </div>
     </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
     <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>  -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
         $('.review_container').slick({
-        infinite: true,
+        
         slidesToShow: 3,
         slidesToScroll: 3,
-        dots: true,
+        dots: true,infinite: true,
         arrows: false,
     //     responsive: [{
         
@@ -674,7 +698,9 @@
     // }
     // ]
         });
+
     </script>
 
+<script src="js/index.js"></script>
 </body>
 </html>
