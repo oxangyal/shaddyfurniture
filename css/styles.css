@@ -186,7 +186,7 @@ padding-bottom: 80px;
     top: 20px;
     left: 0;
     right: 0;
-    width: 100%;
+    max-width: 100%;
   /* background-color: rgba(0, 0, 0, 0.5); */
     color: #fff; /* Set the text color to white */
     z-index: 1; 
